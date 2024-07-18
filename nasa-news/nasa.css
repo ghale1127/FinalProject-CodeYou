@@ -1,0 +1,32 @@
+/* styles.css */
+
+body {
+    background-color:#1b1b1b;
+    margin: 0px;
+  
+  }
+  .news-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #ccc;
+  }
+  
+  .news-item h2 {
+      margin-bottom: 5px;
+      color: #fff;
+  }
+  img {
+    max-width:700px;
+    border-radius: 5px;
+  }
+  .news-item p {
+      margin-top: 0;
+      color: #666;
+  }
+
+  h1 {
+    color:white;
+    text-align: center;
+  }
+  
