@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/astronomy/astro.css">
+    <link rel="stylesheet" href="/astronomy/search-date/date.css">
     <title>APOD</title>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="/homepage/home.html">Home</a> </li>
-                <li><a href="/astronomy/search-date/date.html" class="button">Search Image By Date</a>
+                <li><a href="/astronomy/astro.html">Back</a></li>
+                <li><a href="/homepage/home.html">Home</a></li>
             </ul>
         </nav>
     </header>
-    <div>
-        <h1>Astronomy Of The Day</h1>
+    <div class="container">
+        <div class="details-container">
+            <div class="details-input">
+                <span>Date: </span>
+                <input type="text" id="input">
+            </div>
+            <button type="button" id="btnGet">Search</button>
+
+        </div>
+        <div>
+            <h2></h2>
         </div>
     </div>
+
     <div class="image-container">
         <h2 id="title"></h2>
         <img id="astroImage" src="" alt="">
@@ -26,6 +36,6 @@
         <p id="imgDate"></p>
         <p id="explanation"></p>
     </div>
-    <script src="/astronomy/astro.js"></script>
+    <script src="/astronomy/search-date/date.js"></script>
 </body>
 </html>

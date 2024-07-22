@@ -5,64 +5,20 @@ body{
     background-color: #ffffff;
     background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
 }
-
-.details-container{
-    height:150px;
-    width:100%;
-    background: #6078b4;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+a.button {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: buttontext;
+    background-color: buttonface;
+    text-decoration: none;
 }
 
-
-.details-container .details-input{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
+h1{
+    text-align: center;
+    font-size: 55px;
 }
 
-.details-container .details-input span{
-    color: white;
-    opacity: 0.6;
-    font-size:  26px;
-}
-
-.details-container .details-input input[type=text]{`
-    height: 30px;
-    width: 150px;
-    outline: none;
-    padding: 0 10px ;
-    font-size: 20px;
-}
-
-button#btnGet{
-    width: 150px;
-    height: 40px;
-    border-radius: 5px;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Raedex Pro',sans-serif;
-    outline: none;
-    background-color: #dddddd;
-    padding: 4px 8px;
-    margin: 3px;
-    box-shadow: 0 0 6px rgba(0,0,0,0.1);
-    -webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    -webkit-transition-property: box-shadow, transform;
-    transition-property:box-shadow, transform;
-
-}
-
-button#fetch-image:hover, button#btnGet:focus, button#btnGet:active  {
-    background-color: #c6c6c6;
-    box-shadow: 0 0 10px rgb(0, 0, 0,0.5);
-    -webkit-transform: scale(1.1);
-    transform: scale(0.95);
-}
 #title{
     font-family: 'Shippori Mincho B1', serif;
     font-weight: bold;
@@ -70,6 +26,7 @@ button#fetch-image:hover, button#btnGet:focus, button#btnGet:active  {
 
 }
 .image-container{
+    margin-top: 15px;
     padding:50px;
     font-size: 21px;
     text-align: center;

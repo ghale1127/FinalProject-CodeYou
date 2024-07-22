@@ -1,45 +1,36 @@
 const apiKey = "tU1AVMmsKwLOMuTs4VF69ofaUYCjVwNiIJuB2p8T";
 
-        async function getMedia() {
-            const date = document.getElementById('input').value;
+const apiCall = async () => {
+    const url = 'https://api.nasa.gov/planetary/apod?';
+    const endpoint = `${url}api_key=${apiKey}`;
 
-            if (!date) {
-                alert("Please select a date.");
-                return;
-            }
-            const url = 'https://api.nasa.gov/planetary/apod?';
-            const endPoint = `${url}date=${date}&api_key=${apiKey}`;
+    const response = await fetch(endpoint);
+    const apiData = await response.json();
 
-            try {
-                const response = await fetch(endPoint);
-                const data = await response.json();
-
-                console.log(data);
-
-                const astroImage = document.getElementById('astroImage');
-                const astroVideo = document.getElementById('astroVideo');
-                const explanation = document.getElementById('explanation');
-                const title = document.getElementById('title');
-
-                title.innerHTML = `"${title}"`;
-
-                if (data.media_type === "image") {
-                    astroImage.src = data.url;
-                    astroImage.style.display = "block";
-                    astroVideo.style.display = "none";
-                } else if (data.media_type === "video") {
-                    astroVideo.src = data.url;
-                    astroVideo.style.display = "block";
-                    astroImage.style.display = "none";
-                }
-
-                explanation.textContent = data.explanation;
-                title.textContent = data.title;
-                imgDate.textContent = data.date;
-
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
+    try {
+        const astroImage = document.getElementById('astroImage');
+        const astroVideo = document.getElementById('astroVideo');
+        const explanation = document.getElementById('explanation');
+        const title = document.getElementById('title');
+        if (apiData.media_type === "image") {
+            astroImage.src = apiData.url;
+            astroImage.style.display = "block";
+            astroVideo.style.display = "none";
+        } else if (apiData.media_type === "video") {
+            astroVideo.src = apiData.url;
+            astroVideo.style.display = "block";
+            astroImage.style.display = "none";
         }
 
-        document.getElementById('btnGet').addEventListener('click', getMedia);
+        explanation.textContent = apiData.explanation;
+        title.textContent = apiData.title;
+        imgDate.textContent = apiData.date;
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+};
+
+window.onload = function() {
+    apiCall();
+};
