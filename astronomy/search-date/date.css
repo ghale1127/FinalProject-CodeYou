@@ -1,3 +1,8 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
 body{
     margin: 0;
     padding: 0;
@@ -6,13 +11,53 @@ body{
     background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
 }
 
+.navigation{
+    padding: 15px 10px 0px 15px;
+    display : flex;
+    justify-content: space-between;
+}
+
+.navigation .back {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: buttontext;
+    background-color: #F0F0F0;
+    text-decoration: none;
+    transition: .3s ease;
+    font-weight: 300;
+    font-size: 1.3em;
+    margin: 0 20px;
+
+}
+
+.navigation h1{
+    font-weight: 600px;
+    font-size: 2.5em;
+}
+.top{
+    display: flex;
+}
+.navi {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: buttontext;
+    background-color: #F0F0F0;
+    text-decoration: none;
+    transition: .3s ease;
+    font-weight: 300;
+    font-size: 1.3em;
+    margin: 0 20px;
+}
 .details-container{
-    height:150px;
+    height:120px;
     width:100%;
     background: #6078b4;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 10px;
 }
 
 
@@ -25,16 +70,17 @@ body{
 
 .details-container .details-input span{
     color: white;
-    opacity: 0.6;
     font-size:  26px;
 }
 
-.details-container .details-input input[type=text]{`
+.details-container .details-input input[type=date]{
     height: 30px;
     width: 150px;
     outline: none;
     padding: 0 10px ;
     font-size: 20px;
+    border-radius: 5px;
+    background-color: #F0F0F0;
 }
 
 button#btnGet{
@@ -60,36 +106,30 @@ button#btnGet{
 button#fetch-image:hover, button#btnGet:focus, button#btnGet:active  {
     background-color: #c6c6c6;
     box-shadow: 0 0 10px rgb(0, 0, 0,0.5);
-    -webkit-transform: scale(1.1);
-    transform: scale(0.95);
+    -webkit-transform: scale(1.6);
+    transform: scale(0.90);
 }
 #title{
     font-family: 'Shippori Mincho B1', serif;
     font-weight: bold;
-    
-
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
 }
 .image-container{
     padding:50px;
     font-size: 21px;
     text-align: center;
 }
-}
 
 .image-container img{
     width: 100%;
-}
-
-h3{
-    font-size: 25px;
-    font-weight: bold;
-}
-#imgdate {
-     border: 1px dotted black;
+    padding-bottom: 30px;
 }
 
 #explanation {
+    padding-top: 30px;
     font-family: 'Shippori Mincho B1', serif;
-
 
 }

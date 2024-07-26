@@ -8,12 +8,14 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/homepage/home.html">Home</a> </li>
+        <nav class="navigation">
+            <ul class="navlist">
+                <li><a href="/homepage/home.html" class="button">Home</a> </li>
+                <li><a href="/nasa-news/nasa.html" class="button">News</a> </li>
                 <li><a href="/astronomy/search-date/date.html" class="button">Search Image By Date</a>
             </ul>
         </nav>
+        <div class="menu-btn"></div>
     </header>
     <div>
         <h1>Astronomy Of The Day</h1>
@@ -25,7 +27,9 @@
         <iframe id="astroVideo" src="" frameborder="0" style="display: none;"></iframe>
         <p id="imgDate"></p>
         <p id="explanation"></p>
+    
     </div>
     <script src="/astronomy/astro.js"></script>
+
 </body>
 </html>

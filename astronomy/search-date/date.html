@@ -8,10 +8,14 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/astronomy/astro.html">Back</a></li>
-                <li><a href="/homepage/home.html">Home</a></li>
+        <nav class="navigation">
+            <div>
+                <a href="/astronomy/astro.html" class="back">Back</a>
+            </div>
+            <h1>Search Image By Date</h1>
+            <ul class="top">
+                <li><a href="/homepage/home.html" class="navi">Home</a></li>
+                <li><a href="/nasa-news/nasa.html" class="navi">News</a></li>
             </ul>
         </nav>
     </header>
@@ -19,7 +23,7 @@
         <div class="details-container">
             <div class="details-input">
                 <span>Date: </span>
-                <input type="text" id="input">
+                <input type="date" id="input">
             </div>
             <button type="button" id="btnGet">Search</button>
 

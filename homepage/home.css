@@ -190,6 +190,7 @@ section{
 
     .navigation.active{
         position: fixed;
+        opacity: 0.9.;
         width: 100%;
         height: 100vh;
         top: 0;
@@ -213,6 +214,7 @@ section{
 
    .navlist{
         background: #fff;
+        opacity: 0.85;
         width: 600px;
         max-width: 600px;
         margin: 20px;

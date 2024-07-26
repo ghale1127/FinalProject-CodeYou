@@ -1,4 +1,6 @@
 const apiKey = "tU1AVMmsKwLOMuTs4VF69ofaUYCjVwNiIJuB2p8T";
+const menuBtn = document.querySelector(".menu-btn")
+const navigation = document.querySelector(".navigation")
 
 const apiCall = async () => {
     const url = 'https://api.nasa.gov/planetary/apod?';
@@ -34,3 +36,8 @@ const apiCall = async () => {
 window.onload = function() {
     apiCall();
 };
+
+menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+})
