@@ -4,40 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/homepage/home.css">
-    <!---boxicon link-->
-    <link rel="stylesheet"
-     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">;
-     <!-- remixicon link-->
-     <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-    rel="stylesheet">;
-
     <title>Home page</title>
 </head>
 <body>
     <header>
         <img src="/images/icons8-nasa-96.png" alt="nasa logo" class="logo">
-        <h1> THE SAPCE NEWS</h1>
-        <nav>
+        <h1 class="topic"> THE SPACE NEWS</h1>
+        <nav class="navigation">
             <ul class="navlist">
                 <li><a href="/nasa-news/nasa.html">News</a></li>
                 <li><a href="/astronomy/astro.html">Astronomy</a></li>
                 <li><a href="/About-ME/abtMe.html">About me</a></li>
             </ul>
         </nav>
-        <div class="bx bx-menu" id="menu-icon"></div>
+        <div class="menu-btn"></div>
     </header>
 
-    <section>
-        <div>
-            <p>
-            Welcome to THE SPACE NEWS, where you csn find the latest information, news from NASA. you can stay update about new discoveries, updates, news, missions and latest progress on space exploration and from NASA.
-            take a deep dive into the cosmos and into our outer space. THE SAPCE NEWS is your go to webiste for evrything happening in our outer world.Our site hold wealth of informaion and inspiration for everyone.
-            
-
-            </p>
+    <section class="home">
+        <div class="gimage">
+            <img  class="galaxyImage active" src="/images/galaxy.png" alt="galaxy image">
+            <img  class="galaxyImage" src="/images/ovkJobVvDTM6czP5Zja2GR-1200-80.png" alt="galaxy image">
+            <img  class="galaxyImage" src="/images/AoWXgnHSxAAPxqymPQMQYL-1200-80.png" alt="galaxy image">
         </div>
+        <div class="content active">
+             <p> <b>WELCOME EXPLORER</b>,<br> This site is for those brave enthusiast who wants to stay updated on latest Discoveries, progress on space explorationand News from NASA. <br>
+                THE SAPCE NEWS is your go to webiste for evrything happening in our outer world.Our site hold wealth of informaion and inspiration for everyone.</p>
+                <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h2>NASA NEWS</h2>
+            <p>NASA explores the unknown in air and space, innovates for the benefit of humanity, and inspires the world through discovery.<br>
+                For more than 65 years they have  conducted cutting-edge research to advance technology and aeronautics.There are always new discoveries made everyday, reached new height with techonologies.<br>
+                To stay on updates, to get informed and for the news from NASA, Click the Read news Button: 
+            </p>
+               <a href="/nasa-news/nasa.html">Read News</a>
+       </div>
+       <div class="content">
+        <h2>Astronomy Picture Of The Day</h2>
+        <p>Astronomy Picture Of the Day is where you can find daily different new photograph or image of our universe, along with a brief explanation written by a professional astronomer.<br>
+        The images cover a range of scientific topics, including space exploration, cosmology, atmospheric phenomena, and naked-eye astronomy.<br>
+        You can find the images or photography that has been taken or featured evrysingle day after June 16, 1995.
+        </p>
+           <a href="/astronomy/astro.html">Visit</a>
+        </div>
+   
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
     </section>
+    <script src="home.js"></script>
 
 </body>
 </html>

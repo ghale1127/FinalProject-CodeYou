@@ -17,24 +17,29 @@ a.button {
 h1{
     text-align: center;
     font-size: 55px;
+    margin-bottom: 0px;
+
 }
 
 #title{
     font-family: 'Shippori Mincho B1', serif;
     font-weight: bold;
+    padding-top: 10px;
     
 
 }
 .image-container{
     margin-top: 15px;
-    padding:50px;
+    padding:8px 50px 50px 50px;
     font-size: 21px;
     text-align: center;
 }
-}
 
-.image-container img{
-    width: 100%;
+#astroImage{
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
 }
 
 h3{
@@ -47,6 +52,4 @@ h3{
 
 #explanation {
     font-family: 'Shippori Mincho B1', serif;
-
-
 }
