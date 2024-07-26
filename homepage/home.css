@@ -111,7 +111,7 @@ section{
     z-index: 888;
     color: #fff;
     width:70%;
-    margin-top: 50px;
+    margin-top: 60px;
     display: none;
 }
 
@@ -131,6 +131,8 @@ section{
 
 .home .content p{
     margin-bottom: 65px;
+    font-size: 1.2em;
+    letter-spacing: 1px;
 }
 
 .home .content a {
