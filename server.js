@@ -1,5 +1,8 @@
-const express =require('express');
-const fetch = require('node-fetch');
-const app = express();
+const express = require('express')();
 
-const serverPort = 3000 ;
+const serverPort = 5501 ;
+
+express.listen (
+    serverPort,
+    () => console.log(`it's live on http://localhost:${serverPort}`)
+)
