@@ -1,49 +1,50 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     const rssUrl = 'https://www.nasa.gov/feeds/iotd-feed';
 
-    fetch(rssUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+    try {
+        const response = await fetch(rssUrl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const xmlText = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+        const items = xmlDoc.querySelectorAll('item');
+
+        const newsContainer = document.getElementById('news');
+        if (!newsContainer) {
+            console.error('News container element not found');
+            return;
+        }
+
+        items.forEach((item) => {
+            const title = item.querySelector('title').textContent;
+            const link = item.querySelector('link').textContent;
+            const description = item.querySelector('description').textContent;
+            const enclosure = item.querySelector('enclosure');
+            const thumbnailUrl = enclosure ? enclosure.getAttribute('url') : '';
+
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            if (thumbnailUrl) {
+                const cardImg = document.createElement('img');
+                cardImg.src = thumbnailUrl;
+                cardImg.alt = `${title} Image`;
+                cardImg.classList.add('card-img');
+                card.appendChild(cardImg);
             }
-            return response.text();
-        })
-        .then(xml => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xml, 'text/xml');
-            const items = xmlDoc.querySelectorAll('item');
 
-            const newsContainer = document.getElementById('news');
-
-            items.forEach((item, index) => {
-                const title = item.querySelector('title').textContent;
-                const link = item.querySelector('link').textContent;
-                const description = item.querySelector('description').textContent;
-                const thumbnailUrl = item.querySelector('enclosure').getAttribute('url'); // Get thumbnail URL
-
-                // Create news item container
-                const newsItem = document.createElement('div');
-                newsItem.classList.add('news-item');
-
-                // Create thumbnail image
-                const thumbnailImg = document.createElement('img');
-                thumbnailImg.src = thumbnailUrl;
-                thumbnailImg.alt = title + ' Image';
-                thumbnailImg.classList.add('thumbnail');
-                newsItem.appendChild(thumbnailImg);
-
-                // Create news item details
-                const newsDetails = document.createElement('div');
-                newsDetails.classList.add('news-details');
-                newsDetails.innerHTML = `
-                    <h2><a href="${link}" target="_blank">${title}</a></h2>
-                    <p>${description}</p>
-                `;
-                newsItem.appendChild(newsDetails);
-
-                // Append news item to container
-                newsContainer.appendChild(newsItem);
-            });
-        })
-        .catch(error => console.error('Error fetching RSS feed:', error));
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+            cardBody.innerHTML = `
+                <h5 class="card-title"><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a></h5>
+                <p class="card-text">${description}</p>
+            `;
+            card.appendChild(cardBody);
+            newsContainer.appendChild(card);
+        });
+    } catch (error) {
+        console.error('Error fetching RSS feed:', error);
+    }
 });

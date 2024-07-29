@@ -40,4 +40,4 @@ window.onload = function() {
 menuBtn.addEventListener("click", () => {
     menuBtn.classList.toggle("active");
     navigation.classList.toggle("active");
-})
+}) 

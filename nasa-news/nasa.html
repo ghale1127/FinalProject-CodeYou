@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NASA News</title>
-    <link rel="stylesheet" href="nasa.css">
+    <title>NASA NEWS</title>
+    <link rel="stylesheet" href="/nasa-news/nasa.css">
 </head>
 <body>
-   <header>
-    <nav>
-        <h1> THE SAPACE NEWS </h1>
-        <h2><a href="/homepage/home.html">HOME</a></h2>
-    </nav>
-   </header>
-   <div id="news"></div>
+    <header>
+        <div>
+            <img src="/images/icons8-nasa-96.png" alt="nasa logo" class="logo">
+        </div>
+        <h1 class="topic"> THE SPACE NEWS</h1>
+        <nav>
+           <ul>
+            <li><a href="/homepage/index.html">Home</a></li>
+            <li><a href="/astronomy/astro.html">Picture OF The Day</a></li>
+           </ul>
+        </nav>
 
-    <script src="./nasa.js"></script>
-    <script src="./index.js"></script>
+    </header>
+    <section>
+        <div class="class-container">
+            <div id="news" class="row"></div>
+        </div>
+    </section>
+    <script src="/nasa-news/nasa.js"></script>
 </body>
 </html>
