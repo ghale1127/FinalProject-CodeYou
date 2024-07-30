@@ -3,13 +3,22 @@
     margin: 0;
     list-style: none;
     box-sizing: border-box;
+    font-family: 'Modern',sans-serif;
+    text-decoration: none;
 }
 
+body{
+        background-color: #222;
+}
 
-header{  
-    left: 0;
-    top: 0;
-    z-index: 1000;
+.topic {
+        color: #f31818;
+        font-weight: 800;
+        font-size: 2.5em;
+        letter-spacing: 2px;
+}
+
+header{ 
     width: 100%;
     display:flex;
     align-items: center;
@@ -17,22 +26,59 @@ header{
     padding: 15px 40px;
     background: transparent;
     transition: 0.5s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
+}
+
+.navlist{
+        display: flex;
+        position: relative;
+}
+
+.menu-btn{
+        display: none;
+}
+
+    
+.navlist a {
+        color:beige;
+        margin-left: 30px;
+        font-size: 1.6em;
+        font-weight: 600;
+        border-bottom: 2px solid transparent;
+        transition: all .55s ease;
+        display: inline-block;
+}
+
+.navlist a:hover {
+        border-bottom: 2px solid beige;
 }
 
 .card {
-        border: 1px solid #ddd;
+        border: 0px solid #ddd;
         border-radius: 8px;
-        margin: 16px;
+        margin: 25px;
         padding: 16px;
-        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 6px 8px 4px rgba(106, 103, 103, 0.867);
         display: inline-block;
         vertical-align: top;
-        width: 300px;
-        transition: 0.4s;
+        width: 360px;
+        transition: all 0.3s ease;
+        background-color:  #0C0404;
+        min-height: 400px;
+        overflow: hidden;
+        color:#ececec;
 }
 
 .card:hover {
-        transform: translate(0px, -10px);
+        transform: scale(1.06);
+        background-color: #ececec;
+        color: #555;
+}
+
+.card .card-body:hover{
+        cursor: pointer;
+        transform: 0.4s;
 }
 
 .card-img {
@@ -40,15 +86,16 @@ header{
         height: auto;
         border-bottom: 1px solid #ddd;
         border-radius: 8px 8px 0 0;
+        object-fit: cover;
 }
 
 .card-body {
-        padding: 16px;
+        padding: 13px;
 }
 
 .card-title {
-        font-size: 1.25em;
-        margin: 0 0 8px;
+        font-size: 1.6em;
+        margin-bottom:10px;
 }
 
 .card-title a {
@@ -61,8 +108,8 @@ header{
 }
 
 .card-text {
+        margin-top: 6px;
         font-size: 1em;
-        color: #555;
 }
 
 #news {
@@ -71,3 +118,79 @@ header{
         justify-content: center;
         width: 100% ;
 }
+
+
+@media(max-width: 1040px){
+        header {
+            padding: 10px 18px;
+            margin-bottom: 20px;
+     }
+        section{
+            padding: 100px 20px;
+        }
+    
+        .navigation {
+          display:none;
+        }
+
+        .navigation.active{
+            position: fixed;
+            opacity: 1;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            background: rgba(1, 1, 1, 0.5);
+        }
+    
+        .navlist a {
+            color: black;
+            font-size: 1.2em;
+            margin: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+    
+        .navlist li a:hover{
+            border-bottom: 2px solid #0C0404 ;
+    
+        }
+    
+       .navlist{
+            background: #fff;
+            opacity: 0.85;
+            width: 600px;
+            max-width: 600px;
+            margin: 20px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 5px;
+        }
+    
+        .menu-btn{
+            display: block;
+            background-image: url("/images/icons8-menu-40\ \(2\).png");
+            background-repeat: no-repeat;
+            background-size: 30px;
+            background-position: center;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            color: whitesmoke;
+           }
+    
+        .menu-btn.active{
+            z-index: 999;
+            background: url("/images/close-1.png");
+            background-repeat: no-repeat;
+            background-size: 25px;
+            background-position: center;
+            transition: 0.3s ease;
+            color: whitesmoke;
+    }
+    }
