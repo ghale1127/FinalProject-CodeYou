@@ -1,4 +1,13 @@
 const apiKey = "tU1AVMmsKwLOMuTs4VF69ofaUYCjVwNiIJuB2p8T";
+const menuBtn = document.querySelector(".menu-btn");
+const navigation = document.querySelector(".navigation");
+
+
+menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+});    
+
 
         async function getMedia() {
             const date = document.getElementById('input').value;
@@ -43,3 +52,4 @@ const apiKey = "tU1AVMmsKwLOMuTs4VF69ofaUYCjVwNiIJuB2p8T";
         }
 
         document.getElementById('btnGet').addEventListener('click', getMedia);
+

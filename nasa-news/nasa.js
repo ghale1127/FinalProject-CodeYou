@@ -1,6 +1,7 @@
 
-const menuBtn = document.querySelector(".menu-btn")
-const navigation = document.querySelector(".navigation")
+const menuBtn = document.querySelector(".menu-btn");
+const navigation = document.querySelector(".navigation");
+
 
 document.addEventListener('DOMContentLoaded', async function() {
     const rssUrl = 'https://www.nasa.gov/feeds/iotd-feed';
