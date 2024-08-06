@@ -1,20 +1,21 @@
 /* Base Styles */
 * {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        box-sizing: border-box;
-        font-family: 'Modern', sans-serif;
-        text-decoration: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Modern', sans-serif;
+    text-decoration: none;
     }
     
-    body {
+body {
         background-color: #222;
         color: #ececec;
         line-height: 1.6;
-    }
+        min-height: 100vh;
+}
     
-    header {
+header {
         width: 100%;
         display: flex;
         align-items: center;
@@ -24,39 +25,39 @@
         transition: 0.5s ease;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         margin-bottom: 40px;
-    }
+}
     
-    .topic {
+.topic {
         color: #f31818;
         font-weight: 800;
         font-size: 2.5em;
         letter-spacing: 2px;
-    }
+}
     
-    .navlist {
+.navlist {
         display: flex;
         align-items: center;
-    }
+}
     
-    .navlist a {
+.navlist a {
         color: beige;
         margin-left: 30px;
         font-size: 1.6em;
         font-weight: 600;
         border-bottom: 2px solid transparent;
         transition: all 0.3s ease;
-    }
+}
     
-    .navlist a:hover {
+.navlist a:hover {
         border-bottom: 2px solid beige;
-    }
+}
     
-    .menu-btn {
+.menu-btn {
         display: none;
-    }
+}
     
-    /* Card Styles */
-    .card {
+/* Card Styles */
+.card {
         border: 0;
         border-radius: 8px;
         margin: 25px;
@@ -69,25 +70,25 @@
         background-color: #0C0404;
         min-height: 320px;
         overflow: hidden;
-    }
+}
     
-    .card:hover {
+.card:hover {
         transform: scale(1.06);
         background-color: #ececec;
         color: #555;
-    }
+}
     
-    .card .card-body:hover {
+.card .card-body:hover {
         cursor: pointer;
-    }
+}
     
-    .card-img {
+.card-img {
         width: 100%;
         height: auto;
         border-bottom: 1px solid #ddd;
         border-radius: 8px 8px 0 0;
         object-fit: cover;
-    }
+}
     
     .card-body {
         padding: 13px;
@@ -120,19 +121,19 @@
     }
     
     /* Media Queries */
-    @media screen and (max-width: 1024px) {
+    @media(min-width: 481px) and (max-width: 1024px) {
         header {
             padding: 10px 20px;
             margin-bottom: 20px;
         }
     
-        .navlist {
+        .navigation {
             display: none;
         }
     
-        .navlist.active {
+        .navigation.active {
             position: fixed;
-            opacity: 1;
+            opacity: 0.91;
             width: 100%;
             height: 100vh;
             top: 0;

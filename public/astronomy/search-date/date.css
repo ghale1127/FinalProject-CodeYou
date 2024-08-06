@@ -3,7 +3,9 @@
     margin: 0;
     list-style: none;
 }
+
 body{
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -35,7 +37,7 @@ header {
 }
 
 .navigation .topic{
-    font-weight: 600px;
+    font-weight: 600;
     font-size: 2.5em;
 }
 
@@ -69,7 +71,7 @@ header {
 }
 
 
-.details-container .det  ails-input{
+.details-container .details-input{
     display: flex;
     align-items: center;
     gap: 20px;
@@ -104,19 +106,17 @@ button#btnGet{
     padding: 4px 8px;
     margin: 3px;
     box-shadow: 0 0 6px rgba(0,0,0,0.1);
-    -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
-    -webkit-transition-property: box-shadow, transform;
     transition-property:box-shadow, transform;
 
 }
 
-button#fetch-image:hover, button#btnGet:focus, button#btnGet:active  {
+button#fetch-image:hover, button#btnGet:focus, button#btnGet:active {
     background-color: #c6c6c6;
-    box-shadow: 0 0 10px rgb(0, 0, 0,0.5);
-    -webkit-transform: scale(1.6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transform: scale(0.90);
 }
+
 #title{
     font-family: 'Shippori Mincho B1', serif;
     font-weight: bold;
@@ -125,6 +125,7 @@ button#fetch-image:hover, button#btnGet:focus, button#btnGet:active  {
     letter-spacing: 3px;
     margin-bottom: 40px;
 }
+
 .image-container{
     padding:50px;
     font-size: 21px;
@@ -202,6 +203,11 @@ button#fetch-image:hover, button#btnGet:focus, button#btnGet:active  {
     .menu-btn.active {
         background-image: url("/images/icons8-close-40.png");
         background-size: 1.5625rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 0.3s ease;
+        color: whitesmoke;
+        z-index: 999;
     }
 }
 
@@ -271,6 +277,11 @@ button#fetch-image:hover, button#btnGet:focus, button#btnGet:active  {
     .menu-btn.active {
         background-image: url("/images/icons8-close-40.png");
         background-size: 1.5625rem;
+        background-repeat: no-repeat;
+        z-index: 999;
+        background-position: center;
+        transition: 0.3s ease;
+        color: whitesmoke;
     }
 }
 

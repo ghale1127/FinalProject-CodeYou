@@ -2,6 +2,11 @@
 const menuBtn = document.querySelector(".menu-btn");
 const navigation = document.querySelector(".navigation");
 
+menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+});
+
 
 document.addEventListener('DOMContentLoaded', async function() {
     const rssUrl = 'https://www.nasa.gov/feeds/iotd-feed';
@@ -52,10 +57,4 @@ document.addEventListener('DOMContentLoaded', async function() {
     } catch (error) {
         console.error('Error fetching RSS feed:', error);
     }
-});
-
-
-menuBtn.addEventListener("click", () => {
-    menuBtn.classList.toggle("active");
-    navigation.classList.toggle("active");
 });

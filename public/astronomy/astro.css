@@ -7,6 +7,7 @@
 }
 
 body {
+    min-height: 100vh;
     background-color: #ffffff;
     background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
     font-family: 'Arial', sans-serif;
@@ -15,7 +16,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+     align-items: center;
     background-color: rgb(235, 238, 240);
     padding: 1rem 2.5rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -28,7 +29,7 @@ h1 {
 }
 
 /* Navigation */
-.menu-icon {
+.menu-btn {
     display: none;
 }
 
@@ -133,12 +134,18 @@ h1 {
         width: 2.5rem;
         height: 2.5rem;
         cursor: pointer;
-        transition: background 0.3s ease;
+        transition: 0.3s ease;
+        color: whitesmoke;
     }
 
     .menu-btn.active {
         background-image: url("/images/icons8-close-40.png");
         background-size: 1.5625rem;
+        z-index: 999;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 0.3s ease;
+        color: whitesmoke;
     }
 }
 
@@ -151,6 +158,8 @@ h1 {
     section {
         padding: 1.25rem 1.25rem;
     }
+
+    
 
     .topic {
         display: none;
@@ -208,5 +217,10 @@ h1 {
     .menu-btn.active {
         background-image: url("/images/icons8-close-40.png");
         background-size: 1.5625rem;
+        background-repeat: no-repeat;
+        z-index: 999;
+        background-position: center;
+        transition: 0.3s ease;
+        color: whitesmoke;
     }
 }

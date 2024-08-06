@@ -1,10 +1,15 @@
-
+//const dontenv = require("dotenv").config();
 const menuBtn = document.querySelector(".menu-btn")
 const navigation = document.querySelector(".navigation")
 const apiKey = "tU1AVMmsKwLOMuTs4VF69ofaUYCjVwNiIJuB2p8T";
-//require('dotenv').config();
+//const dotenv = require('dotenv').config();
 //const apiKey = process.env.API_KEY;
 //console.log(process.env);
+menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+});
+
 const apiCall = async () => {
     const url = 'https://api.nasa.gov/planetary/apod?';
     const endpoint = `${url}api_key=${apiKey}`;
@@ -39,8 +44,3 @@ const apiCall = async () => {
 window.onload = function() {
     apiCall();
 };
-
-menuBtn.addEventListener("click", () => {
-    menuBtn.classList.toggle("active");
-    navigation.classList.toggle("active");
-}) 
