@@ -102,8 +102,16 @@ body{
     background-color:	#E1E2E6;
 }
 
+.find {
+    background-color: #d3d5da;
+}
+
+.future{
+    background-color:#c5c7cf;
+}
 
 footer {
+    background-color: #b7bac3;
     width: 100%;
     text-align: center;
     padding: 30px 0 ;

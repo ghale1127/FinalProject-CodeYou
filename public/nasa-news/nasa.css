@@ -30,7 +30,7 @@ header {
 .topic {
         color: #f31818;
         font-weight: 800;
-        font-size: 2.5em;
+        font-size: 2.2em;
         letter-spacing: 2px;
 }
     
@@ -42,7 +42,7 @@ header {
 .navlist a {
         color: beige;
         margin-left: 30px;
-        font-size: 1.6em;
+        font-size: 1.4em;
         font-weight: 600;
         border-bottom: 2px solid transparent;
         transition: all 0.3s ease;
@@ -121,7 +121,7 @@ header {
     }
     
     /* Media Queries */
-    @media(min-width: 481px) and (max-width: 1024px) {
+    @media(max-width: 1084px) {
         header {
             padding: 10px 20px;
             margin-bottom: 20px;
@@ -129,6 +129,10 @@ header {
     
         .navigation {
             display: none;
+        }
+
+        .topic{
+            font-size: 1.7em;
         }
     
         .navigation.active {

@@ -1,12 +1,18 @@
 const apiKey = "tU1AVMmsKwLOMuTs4VF69ofaUYCjVwNiIJuB2p8T";
-const menuBtn = document.querySelector(".menu-btn");
-const navigation = document.querySelector(".navigation");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
 
-menuBtn.addEventListener("click", () => {
-    menuBtn.classList.toggle("active");
-    navigation.classList.toggle("active");
-}); 
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+
+});
+
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener('click', () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}));
 
 
 async function getMedia() {
