@@ -7,7 +7,6 @@
 
 ---
 </h2>
- \
 This project is a web application that uses NASA’s open APIs which display the latest news from NASA in a responsive web application design. The web application fetches news articles from NASA's RSS feed and presents them in a user-friendly format with cards displaying images, titles, and descriptions.It also includes a feature to fetch and display the Astronomy Picture of the Day (APOD) for a selected date. The application is built using JavaScript, HTML, and CSS, and it runs on an Express server that serves static files.
 
 
