@@ -11,6 +11,8 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener('click', 
     navMenu.classList.remove("active");
 }));
 
+const apodDataMap = new Map();
+
 async function getMedia() {
     const date = document.getElementById('input').value;
 
@@ -29,6 +31,12 @@ async function getMedia() {
         return;
     }
 
+    // Check if data for the selected date is already in the map
+    if (apodDataMap.has(date)) {
+        displayData(apodDataMap.get(date));
+        return;
+    }
+
     const url = `/api/apod?date=${date}`;
 
     try {
@@ -38,32 +46,38 @@ async function getMedia() {
         }
         const data = await response.json();
 
+        // Store the fetched data in the map
+        apodDataMap.set(date, data);
+
         console.log(data);
-
-        const astroImage = document.getElementById('astroImage');
-        const astroVideo = document.getElementById('astroVideo');
-        const explanation = document.getElementById('explanation');
-        const title = document.getElementById('title');
-        const imgDate = document.getElementById('imgDate');
-
-        if (data.media_type === "image") {
-            astroImage.src = data.url;
-            astroImage.style.display = "block";
-            astroVideo.style.display = "none";
-        } else if (data.media_type === "video") {
-            astroVideo.src = data.url;
-            astroVideo.style.display = "block";
-            astroImage.style.display = "none";
-        }
-
-        explanation.textContent = data.explanation;
-        title.textContent = data.title;
-        imgDate.textContent = data.date;
+        displayData(data);
 
     } catch (error) {
         console.error('Error fetching data:', error);
         alert("An error occurred while fetching data. Please try again later.");
     }
+}
+
+function displayData(data) {
+    const astroImage = document.getElementById('astroImage');
+    const astroVideo = document.getElementById('astroVideo');
+    const explanation = document.getElementById('explanation');
+    const title = document.getElementById('title');
+    const imgDate = document.getElementById('imgDate');
+
+    if (data.media_type === "image") {
+        astroImage.src = data.url;
+        astroImage.style.display = "block";
+        astroVideo.style.display = "none";
+    } else if (data.media_type === "video") {
+        astroVideo.src = data.url;
+        astroVideo.style.display = "block";
+        astroImage.style.display = "none";
+    }
+
+    explanation.textContent = data.explanation;
+    title.textContent = data.title;
+    imgDate.textContent = data.date;
 }
 
 document.getElementById('btnGet').addEventListener('click', getMedia);
