@@ -1,15 +1,11 @@
 //const dontenv = require("dotenv").config();
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
-const apiKey = "tU1AVMmsKwLOMuTs4VF69ofaUYCjVwNiIJuB2p8T";
-//const dotenv = require('dotenv').config();
-//const apiKey = process.env.API_KEY;
-//console.log(process.env);
+const apiKey = "API_KEY"
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
-
-  });
+});
 
 document.querySelectorAll(".nav-link").forEach(n => n.addEventListener('click', () => {
     hamburger.classList.remove("active");
@@ -21,10 +17,10 @@ const apiCall = async () => {
     const url = 'https://api.nasa.gov/planetary/apod?';
     const endpoint = `${url}api_key=${apiKey}`;
 
-    const response = await fetch(endpoint);
-    const apiData = await response.json();
-
     try {
+        const response = await fetch('/api/apod');
+        const apiData = await response.json();
+
         const astroImage = document.getElementById('astroImage');
         const astroVideo = document.getElementById('astroVideo');
         const explanation = document.getElementById('explanation');
