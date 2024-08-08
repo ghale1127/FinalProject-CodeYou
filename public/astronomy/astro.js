@@ -1,30 +1,33 @@
-//const dontenv = require("dotenv").config();
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
-const apiKey = "API_KEY"
+
+// Event listener for hamburger menu toggle
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
 });
 
+// Event listener for navigation link clicks
 document.querySelectorAll(".nav-link").forEach(n => n.addEventListener('click', () => {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }));
 
-
+// Function to fetch and display APOD data
 const apiCall = async () => {
-    const url = 'https://api.nasa.gov/planetary/apod?';
-    const endpoint = `${url}api_key=${apiKey}`;
-
     try {
-        const response = await fetch('/api/apod');
+        const response = await fetch('/api/apod'); // Fetch data from your backend API endpoint
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const apiData = await response.json();
 
         const astroImage = document.getElementById('astroImage');
         const astroVideo = document.getElementById('astroVideo');
         const explanation = document.getElementById('explanation');
         const title = document.getElementById('title');
+        const imgDate = document.getElementById('imgDate');
+
         if (apiData.media_type === "image") {
             astroImage.src = apiData.url;
             astroImage.style.display = "block";
@@ -41,9 +44,11 @@ const apiCall = async () => {
 
     } catch (error) {
         console.error('Error fetching data:', error);
+        alert('An error occurred while fetching data. Please try again later.');
     }
 };
 
+// Fetch data when the page loads
 window.onload = function() {
     apiCall();
 };
