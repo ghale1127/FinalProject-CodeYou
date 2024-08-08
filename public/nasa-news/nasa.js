@@ -1,15 +1,16 @@
-
 const menuBtn = document.querySelector(".menu-btn");
 const navigation = document.querySelector(".navigation");
 
 menuBtn.addEventListener("click", () => {
-    menuBtn.classList.toggle("active");
-    navigation.classList.toggle("active");
+     menuBtn.classList.toggle("active");
+     navigation.classList.toggle("active");
 });
-
 
 document.addEventListener('DOMContentLoaded', async function() {
     const rssUrl = 'https://www.nasa.gov/feeds/iotd-feed';
+    const loadingIndicator = document.getElementById('loading');
+    const errorMessage = document.getElementById('error-message');
+    const newsContainer = document.getElementById('news');
 
     try {
         const response = await fetch(rssUrl);
@@ -21,17 +22,16 @@ document.addEventListener('DOMContentLoaded', async function() {
         const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
         const items = xmlDoc.querySelectorAll('item');
 
-        const newsContainer = document.getElementById('news');
         if (!newsContainer) {
             console.error('News container element not found');
-            return;
+             return;
         }
 
         items.forEach((item) => {
             const title = item.querySelector('title').textContent;
             const link = item.querySelector('link').textContent;
-            const description = item.querySelector('description').textContent;
-            const enclosure = item.querySelector('enclosure');
+             const description = item.querySelector('description').textContent;
+             const enclosure = item.querySelector('enclosure');
             const thumbnailUrl = enclosure ? enclosure.getAttribute('url') : '';
 
             const card = document.createElement('div');
@@ -54,7 +54,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             card.appendChild(cardBody);
             newsContainer.appendChild(card);
         });
+        loadingIndicator.style.display = 'none';
     } catch (error) {
         console.error('Error fetching RSS feed:', error);
-    }
+        loadingIndicator.style.display = 'none';
+        errorMessage.style.display = 'block';
+     }
 });

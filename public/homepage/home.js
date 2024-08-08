@@ -1,4 +1,3 @@
-
 const menuBtn = document.querySelector(".menu-btn")
 const navigation = document.querySelector(".navigation")
 
@@ -7,7 +6,7 @@ menuBtn.addEventListener("click", () => {
     navigation.classList.toggle("active");
 })
 
-// for image slider naviagtion
+// for image slider navigation
 const btns = document.querySelectorAll(".nav-btn");
 const slides = document.querySelectorAll(".galaxyImage");
 const contents = document.querySelectorAll(".content");
@@ -23,8 +22,6 @@ let sliderNav =function(manual){
     contents.forEach((content) => {
         content.classList.remove("active");   
     });
-
-
 
     btns[manual].classList.add("active");
     slides[manual].classList.add("active");

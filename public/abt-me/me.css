@@ -7,84 +7,83 @@
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;;
-}
+  }
 
-header{
+  header{
     background-color: white;
-}
+  }
 
-a {
+  a {
     color: black;
     text-decoration: none;
-}
+  }
 
-.navbar {
+  .navbar {
     min-height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 24px;
-}
+  }
 
-.logo {
+  .logo {
     width: 80px;
-}
+  }
 
-body{
+  body{
     min-height: 100vh;
-}
+  }
 
-h1{
+  h1{
     text-align: center;
     height: 44px;
     font-weight: 500;
     font-size: 30px;
     margin-bottom: 15px;
-}
+  }
 
-p {
+  p {
     padding: 5px 30px 20px;
     font-size: 18px;
     line-height: 24px;
-}
+  }
 
-h2 {
+  h2 {
     padding: 0px 30px 2px;
-}
+  }
 
-h3 {
+  h3 {
     padding: 0px 30px 12px
-}
-section {
+  }
+  section {
     padding:20px 130px ;
-}
+  }
 
-.nav-menu{
+  .nav-menu{
     display: flex;
     justify-content: space-between;
     align-items:center ;
     gap: 60px;
-}
+  }
 
-.title {
+  .title {
     font-size: 2rem;
+  }
 
-}
-
-.nav-link {
+  .nav-link {
     transition: 0.7s ease;
-}
+  }
 
-.nav-link:hover {
+  .nav-link:hover {
     border-bottom: 2px solid black;
-}
+  }
 
-.hamburger {
+  .hamburger {
     display: none;
     cursor: pointer;
-}
+  }
 
-.bar {
+  .bar {
     display: block;
     width: 25px;
     height: 3px;
@@ -92,45 +91,41 @@ section {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: black;
-}
+  }
 
-
-
-
-body{
+  body{
     min-height: 100vh;
-    background-color:	#E1E2E6;
-}
+    background-color: #E1E2E6;
+  }
 
-.find {
+  .find {
     background-color: #d3d5da;
-}
+  }
 
-.future{
+  .future{
     background-color:#c5c7cf;
-}
+  }
 
-footer {
+  footer {
     background-color: #b7bac3;
     width: 100%;
     text-align: center;
     padding: 30px 0 ;
-}
+  }
 
-.icons .fa {
+  .icons .fa {
     color: #f44336;
     margin: 0 10px;
     cursor: pointer;
     padding: 18px 0;
     font-size: 30px;
-}
+  }
 
-.fa-heart{
+  .fa-heart{
     color: #f44336;
-}
+  }
 
-
-@media(max-width: 860px){
+  @media(max-width: 860px){
     .hamburger{
         display: block;
     }
@@ -187,9 +182,9 @@ footer {
     h2, h3 {
         padding: 2px 12px 7px;
     }
-}
+  }
 
-@media(max-width: 480px){
+  @media(max-width: 480px){
     .title{
         display: none;
     }
@@ -207,4 +202,4 @@ footer {
     h2, h3 {
         padding: 2px 8px 4px;
     }
-}
+  }

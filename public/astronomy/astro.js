@@ -22,6 +22,10 @@ const apiCall = async () => {
         }
         const apiData = await response.json();
 
+        if (!apiData || !apiData.media_type || !apiData.url || !apiData.explanation || !apiData.title || !apiData.date) {
+            throw new Error('Incomplete data received from API');
+        }
+
         const astroImage = document.getElementById('astroImage');
         const astroVideo = document.getElementById('astroVideo');
         const explanation = document.getElementById('explanation');
@@ -44,7 +48,7 @@ const apiCall = async () => {
 
     } catch (error) {
         console.error('Error fetching data:', error);
-        alert('An error occurred while fetching data. Please try again later.');
+        alert(`An error occurred: ${error.message}`);
     }
 };
 
